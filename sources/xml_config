@@ -1,0 +1,74 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@2.24">
+  <actions/>
+  <description></description>
+  <properties>
+    <org.jenkinsci.plugins.docker.workflow.declarative.FolderConfig plugin="docker-workflow@1.26">
+      <dockerLabel></dockerLabel>
+      <registry plugin="docker-commons@1.17"/>
+    </org.jenkinsci.plugins.docker.workflow.declarative.FolderConfig>
+    <org.jenkinsci.plugins.workflow.multibranch.PipelineTriggerProperty plugin="multibranch-action-triggers@1.8.6">
+      <createActionJobsToTrigger></createActionJobsToTrigger>
+      <deleteActionJobsToTrigger></deleteActionJobsToTrigger>
+      <actionJobsToTriggerOnRunDelete></actionJobsToTriggerOnRunDelete>
+      <quitePeriod>0</quitePeriod>
+      <branchIncludeFilter>*</branchIncludeFilter>
+      <branchExcludeFilter></branchExcludeFilter>
+      <additionalParameters/>
+    </org.jenkinsci.plugins.workflow.multibranch.PipelineTriggerProperty>
+    <org.jenkinsci.plugins.configfiles.folder.FolderConfigFileProperty plugin="config-file-provider@3.8.0">
+      <configs class="sorted-set">
+        <comparator class="org.jenkinsci.plugins.configfiles.ConfigByIdComparator"/>
+      </configs>
+    </org.jenkinsci.plugins.configfiles.folder.FolderConfigFileProperty>
+  </properties>
+  <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api@2.6.4">
+    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+  </folderViews>
+  <healthMetrics/>
+  <icon class="jenkins.branch.MetadataActionFolderIcon" plugin="branch-api@2.6.4">
+    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+  </icon>
+  <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder@6.15">
+    <pruneDeadBranches>true</pruneDeadBranches>
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>-1</numToKeep>
+  </orphanedItemStrategy>
+  <triggers/>
+  <disabled>false</disabled>
+  <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api@2.6.4">
+    <data>
+      <jenkins.branch.BranchSource>
+        <source class="io.jenkins.plugins.gitlabbranchsource.GitLabSCMSource" plugin="gitlab-branch-source@1.5.7">
+          <serverName>your_serverName</serverName>
+          <projectOwner>your_projectOwner</projectOwner>
+          <projectPath>your_projectPath</projectPath>
+          <credentialsId>your_credentialsId</credentialsId>
+          <traits>
+            <io.jenkins.plugins.gitlabbranchsource.BranchDiscoveryTrait>
+              <strategyId>1</strategyId>
+            </io.jenkins.plugins.gitlabbranchsource.BranchDiscoveryTrait>
+            <io.jenkins.plugins.gitlabbranchsource.OriginMergeRequestDiscoveryTrait>
+              <strategyId>1</strategyId>
+            </io.jenkins.plugins.gitlabbranchsource.OriginMergeRequestDiscoveryTrait>
+            <io.jenkins.plugins.gitlabbranchsource.ForkMergeRequestDiscoveryTrait>
+              <strategyId>1</strategyId>
+              <trust class="io.jenkins.plugins.gitlabbranchsource.ForkMergeRequestDiscoveryTrait$TrustPermission"/>
+            </io.jenkins.plugins.gitlabbranchsource.ForkMergeRequestDiscoveryTrait>
+          </traits>
+          <sshRemote>your_sshRemote</sshRemote>
+          <httpRemote>your_httpRemote</httpRemote>
+          <projectId>47</projectId>
+        </source>
+        <strategy class="jenkins.branch.DefaultBranchPropertyStrategy">
+          <properties class="empty-list"/>
+        </strategy>
+      </jenkins.branch.BranchSource>
+    </data>
+    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+  </sources>
+  <factory class="org.jenkinsci.plugins.workflow.multibranch.WorkflowBranchProjectFactory">
+    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+    <scriptPath>.jenkinsFile</scriptPath>
+  </factory>
+</org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject>

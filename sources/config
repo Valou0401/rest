@@ -1,0 +1,13 @@
+[GITLAB]
+ipv4_gitlab = 172.19.0.4:80
+gitlab_api_token = Q2VAmmv9x48_EWuLxfiy
+gitlab_user = root
+gitlab_passwd = rootroot
+
+[JENKINS]
+ipv4_jenkins = 172.19.0.2:8080
+jenkins_api_token = 110d985f1670491f4c3f5639038dedc507
+jenkins_user = admin
+jenkins_passwd = admin
+gitlab_server_name_in_jenkins = local
+
